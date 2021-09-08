@@ -53,8 +53,8 @@ function fastbootExpressMiddleware(distPath, options) {
       } else if (result.error) {
         res.send(body[0]);
       } else {
-        body.forEach(chunk => res.write(chunk));
         res.type('html');
+        body.forEach(chunk => res.write(chunk));
         res.end();
       }
     } catch (error) {
